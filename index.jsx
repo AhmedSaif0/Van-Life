@@ -4,28 +4,34 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from './pages/Vans';
-import Vansdetails from './Vansdetails';
-
+import VanDetail from './VanDetail';
+import Layout from './components/Layout';
+import Dashbord from './pages/Host/Dashbord'
+import Income from './pages/Host/Income';
+import Reviews from './pages/Host/Reviews';
+import HostLayout from './pages/Host/HostLayout';
 import "./server"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <header>
-        <Link className="site-logo" to="/">#VanLife</Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/Vans">Vans</Link>
-        </nav>
-      </header>
-      <Routes>
+  
+  <BrowserRouter>
+    <Routes>
+      <Route element={<Layout/>} >
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Vans" element={<Vans />} />
-        <Route path="/Vans/:id" element={<Vansdetails/>} />
+        <Route path="about" element={<About />} />
+        <Route path="vans" element={<Vans />} />
+        <Route path="vans/:id" element={<VanDetail/>} />
 
-      </Routes>
-    </BrowserRouter>
+      <Route path='/host' element={<HostLayout/>}>
+        <Route path="income" element={<Income/>}/>
+        <Route path="Reviews" element={<Reviews/>}/>
+      </Route>
+      </Route>
+    </Routes>
+  </BrowserRouter>
+
   )
 }
 

@@ -223,3 +223,50 @@ header a:hover {
 i[class*='van-type-'] {
     padding: 7px 14px;
 }
+
+
+.van-detail {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.van-detail img {
+    border-radius: 18px;
+    padding: 7px;
+    max-width: 60%;
+    
+}
+
+.van-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.van-detail > i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+    background-color: #FF8C38;
+    color: white;
+    font-size: 1.125rem;
+}
+
+.detail {
+    left: 63%;
+    padding-top: 12px;
+}
+
+@media screen and (max-width :600px){
+   .van-detail {flex-wrap: wrap;}
+}
