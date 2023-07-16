@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import HashLoader from "react-spinners/HashLoader"
 
 /**
  * {
@@ -35,11 +36,20 @@ export default function Vans() {
     ))
 
     return (
-        <div className="van-list-container">
-            <h1>Explore our van options</h1>
-            <div className="van-list">
-                {vanElements}
+        <>
+        {
+            vans.length > 0 ?  (
+                <div className="van-list-container">
+                <h1>Explore our van options</h1>
+                <div className="van-list">
+                    {vanElements}
+                </div>
             </div>
-        </div>
+            )
+            : (<h2><HashLoader color="#FF8C38" style={{alignContent:'center', alignItems:'center', height: '200px'}}/></h2>)
+        }
+        </>
+
+      
     )
 }

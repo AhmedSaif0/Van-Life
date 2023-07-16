@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-
+import { HashLoader } from "react-spinners"
 export default function HostVans() {
     const [vans, setVans] = React.useState([])
 
@@ -28,16 +28,17 @@ export default function HostVans() {
 
     return (
         <section>
-            <h1 className="host-vans-title">Your listed vans</h1>
+           
             <div className="host-vans-list">
                 {
                     vans.length > 0 ? (
                         <section>
+                         <h1 className="host-vans-title">Your listed vans</h1>
                             {hostVansEls}
                         </section>
 
                     ) : (
-                            <h2>Loading...</h2>
+                        <h2><HashLoader color="#FF8C38" style={{alignContent:'center', alignItems:'center', height: '200px'}}/></h2>
                         )
                 }
             </div>
